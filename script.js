@@ -1,6 +1,15 @@
+$("#flag2").hide();
+$("#flag3").hide();
+
 setTimeout(function () {
-  $("#flags").fadeOut("fast");
+  $("#flag1").fadeOut("fast");
 }, 5000);
+
+
+let levelCounter = 1;
+
+$('#levelCounter').text(levelCounter);
+
 const questions = [
   [
     {
@@ -196,7 +205,22 @@ function checkPasscode() {
     currentQuestion = 0;
     loadQuestion();
     document.getElementById("passcode-container").style.display = "none";
+    levelCounter = levelCounter + 1;
+    $("#levelCounter").text(levelCounter);
     showMessage("Next set of questions unlocked.");
+    if(levelCounter == 2){
+
+        $("#flag2").show();
+        setTimeout(function () {
+            $("#flag2").fadeOut("fast");
+          }, 5000);
+    }
+    if(levelCounter == 3){
+        $("#flag3").show();
+        setTimeout(function () {
+            $("#flag3").fadeOut("fast");
+          }, 5000);
+    }
   } else {
     showMessage(
       "Invalid passcode. Returning to the first question of the current set."

@@ -252,6 +252,7 @@
         }
   
         function checkAnswer() {
+          console.log('Entered Check Answer')
           const selectedAnswer = document.querySelector(
             'input[name="answer"]:checked'
           );
@@ -281,6 +282,7 @@
         }
   
         function checkPasscode() {
+          console.log('Entered Check Passcode')
           const enteredPasscode = document.getElementById("passcode-input").value;
           const correctPasscode =
             questions[currentSet][0].answer.toString() +
